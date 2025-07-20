@@ -1,0 +1,35 @@
+{
+  "version-string": "0.0.1",
+  "dependencies": [
+    "glog",
+    "abseil",
+    "gtest",
+    "benchmark",
+    "bshoshany-thread-pool",
+    "boost-uuid",
+    "boost-graph",
+    "boost-static-assert",
+    "boost-property-map",
+    "boost-unordered",
+    {
+      "name": "imgui",
+      "features": [
+        "glfw-binding",
+        "opengl3-binding"
+      ]
+    },
+    {
+      "name": "glad",
+      "features": [
+        "gl-api-46"
+      ]
+    }
+  ],
+  "overrides": [
+    {
+      "name": "imgui",
+      "version": "1.91.9"
+    }
+  ],
+  "builtin-baseline": "3421943bfdef53a1d16404e98b5b487112c59df2"
+}
