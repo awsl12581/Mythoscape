@@ -12,12 +12,21 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-
+# cmake modules
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+# Find meojson
+find_package(meojson REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
 find_package(glad CONFIG REQUIRED)
 
+# srcs
+file(GLOB_RECURSE SRC_FILES "${CMAKE_SOURCE_DIR}/src/*.cpp")
+
 add_executable(main
-    src/main.cpp
+    ${SRC_FILES}
 )
+target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/src)
+
 target_link_libraries(main PRIVATE glfw)
 target_link_libraries(main PRIVATE glad::glad)
+target_link_libraries(main PRIVATE meojson)

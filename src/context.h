@@ -1,6 +1,8 @@
 #if !defined(MYTHOSCAPE_CONTEXT_H)
 #define MYTHOSCAPE_CONTEXT_H
 
+#include <json.hpp>
+
 namespace mythoscape::context
 {
 
@@ -19,6 +21,10 @@ namespace mythoscape::context
  */
 struct Context
 {
+    // OpenGL context
+    int openglVersionMajor = 4;
+    int openglVersionMinor = 6;
+    MEO_JSONIZATION(openglVersionMajor, openglVersionMinor);
 };
 
 /**
