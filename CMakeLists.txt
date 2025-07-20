@@ -13,3 +13,11 @@ set(CMAKE_CXX_EXTENSIONS ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
+find_package(glfw3 CONFIG REQUIRED)
+find_package(glad CONFIG REQUIRED)
+
+add_executable(main
+    src/main.cpp
+)
+target_link_libraries(main PRIVATE glfw)
+target_link_libraries(main PRIVATE glad::glad)
